@@ -172,16 +172,37 @@ section{padding:104px 0;}
 .plan .btn{width:100%; justify-content:center;}
 
 /* ---------- CONTATO ---------- */
-.local{background:var(--teal-deep); color:var(--cream); text-align:center;}
-.local-inner{max-width:580px; margin:0 auto;}
+.local{background:var(--teal-deep); color:var(--cream);}
+.local-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;}
+@media(max-width:900px){.local-grid{grid-template-columns:1fr; gap:36px;}}
 .local .eyebrow{color:#CDE7E3;}
 .local h2{color:var(--cream);}
 .local p.lede{margin-top:16px; color:rgba(251,243,236,0.75); font-size:1.05rem;}
-.local-actions{margin-top:34px; display:flex; flex-wrap:wrap; gap:16px; justify-content:center;}
-.social-row{display:flex; gap:12px; margin-top:30px; justify-content:center;}
+.local-card{background:rgba(251,243,236,0.06); border:1px solid rgba(251,243,236,0.16); border-radius:12px; padding:30px; margin-top:28px;}
+.info-row{display:flex; gap:14px; padding:14px 0; border-top:1px solid rgba(251,243,236,0.14);}
+.info-row:first-child{border-top:none; padding-top:0;}
+.info-row svg{width:19px; height:19px; flex-shrink:0; margin-top:2px; color:var(--peach);}
+.info-row h4{font-size:0.9rem; font-weight:700; color:var(--cream);}
+.info-row p, .info-row a{font-size:0.88rem; color:rgba(251,243,236,0.72); margin-top:2px;}
+.info-row a:hover{color:var(--peach);}
+.local-actions{margin-top:28px; display:flex; flex-wrap:wrap; gap:16px;}
+.social-row{display:flex; gap:12px; margin-top:26px;}
 .social-btn{width:44px; height:44px; border-radius:50%; border:1px solid rgba(251,243,236,0.3); display:flex; align-items:center; justify-content:center; transition:0.25s ease; color:var(--cream);}
 .social-btn:hover{background:var(--peach-deep); border-color:var(--peach-deep);}
 .social-btn svg{width:19px; height:19px;}
+.map-frame{border-radius:12px; overflow:hidden; box-shadow:0 30px 80px -30px rgba(0,0,0,0.5); border:1px solid rgba(251,243,236,0.16);}
+.map-frame iframe{width:100%; height:420px; border:0; display:block;}
+
+/* ---------- PROVA SOCIAL ---------- */
+.social-proof{background:#fff;}
+.proof-stat{display:flex; align-items:baseline; gap:10px; margin-bottom:44px; flex-wrap:wrap;}
+.proof-stat b{font-family:'Libre Caslon Display',serif; font-size:2.8rem; font-weight:400; color:var(--peach-deep);}
+.proof-stat span{font-size:1rem; color:var(--stone);}
+.testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr; max-width:480px; margin:0 auto;}}
+.testi-card{background:var(--cream); border-radius:12px; padding:28px 26px;}
+.testi-card p{font-size:0.96rem; color:var(--ink-soft); line-height:1.55;}
+.testi-card .who{margin-top:18px; font-size:0.86rem; font-weight:700; color:var(--peach-deep);}
 
 /* ---------- FOOTER ---------- */
 footer{background:var(--ink); color:rgba(251,243,236,0.55); padding:32px 0;}
@@ -317,6 +338,30 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--peach-deep); outli
     </div>
   </section>
 
+  <!-- PROVA SOCIAL -->
+  <section class="social-proof">
+    <div class="container">
+      <div class="proof-stat reveal">
+        <b>5,0</b>
+        <span>· 56 avaliações reais no Google</span>
+      </div>
+      <div class="testi-grid reveal">
+        <div class="testi-card stagger-item">
+          <p>"Adoro ela! Super profissional! Faz o cardápio personalizado para cada paciente! Ela faz tudo para que o paciente consiga chegar no resultado que deseja. Super disponível para responder as dúvidas da dieta! Indico muito!"</p>
+          <div class="who">Paula Gonçalves</div>
+        </div>
+        <div class="testi-card stagger-item">
+          <p>"Trata-se de uma profissional extremamente competente, acolhedora e comprometida com o bem-estar de seus pacientes. Sua comunicação é clara, empática e eficaz, sempre pronta para esclarecer dúvidas."</p>
+          <div class="who">Karina Rios</div>
+        </div>
+        <div class="testi-card stagger-item">
+          <p>"Minha nutricionista desde que comecei o pré e pós operatório para bariátrica. Super atenciosa, prestativa e disponível. Atendimento sempre com muito cuidado, planejamento alimentar individual."</p>
+          <div class="who">Juliana Maciel</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- OFERTA -->
   <section class="oferta" id="oferta">
     <div class="container">
@@ -349,20 +394,35 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--peach-deep); outli
   <!-- CONTATO -->
   <section class="local" id="contato">
     <div class="container">
-      <div class="local-inner reveal">
-        <p class="eyebrow">Vamos conversar</p>
-        <h2 style="margin-top:12px; font-size:clamp(1.9rem,3.2vw,2.4rem);">Fale com a Karla pelo WhatsApp.</h2>
-        <p class="lede">Atendimento direto pelo WhatsApp — tire suas dúvidas e agende sua consulta.</p>
-        <div class="local-actions">
-          <a href="https://wa.me/5541999129656?text=Ol%C3%A1%2C%20Karla%21%20Vim%20do%20Instagram%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.29 1.19-1.78 1.24-.46.05-.95.24-3.18-.66-2.68-1.09-4.4-3.8-4.53-3.98-.13-.18-1.08-1.44-1.08-2.75 0-1.3.68-1.94.92-2.2.24-.26.53-.32.7-.32.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.14.29-.27.44-.14.16-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.13.45.2.51.31.07.11.07.62-.15 1.23z"/></svg>
-            Agendar consulta
-          </a>
+      <div class="local-grid">
+        <div class="local-inner reveal">
+          <p class="eyebrow">Vamos conversar</p>
+          <h2 style="margin-top:12px; font-size:clamp(1.9rem,3.2vw,2.4rem);">Fale com a Karla pelo WhatsApp ou visite o consultório.</h2>
+          <p class="lede">Atendimento em Curitiba — tire suas dúvidas e agende sua consulta.</p>
+          <div class="local-card">
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-7.58 8-13A8 8 0 1 0 4 9c0 5.42 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+              <div><h4>Endereço</h4><p>Av. Iguaçu, 2947 — 11º andar, sala 112, Água Verde, Curitiba - PR, 80240-031</p></div>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.29 1.19-1.78 1.24-.46.05-.95.24-3.18-.66-2.68-1.09-4.4-3.8-4.53-3.98-.13-.18-1.08-1.44-1.08-2.75 0-1.3.68-1.94.92-2.2.24-.26.53-.32.7-.32.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.14.29-.27.44-.14.16-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.13.45.2.51.31.07.11.07.62-.15 1.23z"/></svg>
+              <div><h4>WhatsApp</h4><a href="https://wa.me/5541999129656?text=Ol%C3%A1%2C%20Karla%21%20Vim%20do%20Instagram%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">(41) 99912-9656</a></div>
+            </div>
+          </div>
+          <div class="local-actions">
+            <a href="https://wa.me/5541999129656?text=Ol%C3%A1%2C%20Karla%21%20Vim%20do%20Instagram%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.29 1.19-1.78 1.24-.46.05-.95.24-3.18-.66-2.68-1.09-4.4-3.8-4.53-3.98-.13-.18-1.08-1.44-1.08-2.75 0-1.3.68-1.94.92-2.2.24-.26.53-.32.7-.32.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.14.29-.27.44-.14.16-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.13.45.2.51.31.07.11.07.62-.15 1.23z"/></svg>
+              Agendar consulta
+            </a>
+          </div>
+          <div class="social-row">
+            <a class="social-btn" href="https://www.instagram.com/karlazaninn/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="social-row">
-          <a class="social-btn" href="https://www.instagram.com/karlazaninn/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </a>
+        <div class="map-frame reveal">
+          <iframe src="https://www.google.com/maps?q=Av.+Igua%C3%A7u,+2947,+%C3%81gua+Verde,+Curitiba+-+PR&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do consultório da Karla Zanin"></iframe>
         </div>
       </div>
     </div>
@@ -417,7 +477,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--peach-deep); outli
   }, {threshold:0.15});
   revealEls.forEach(el => io.observe(el));
 
-  const staggerGroups = document.querySelectorAll('.prog-grid, .plan-grid');
+  const staggerGroups = document.querySelectorAll('.prog-grid, .plan-grid, .testi-grid');
   const groupIo = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
